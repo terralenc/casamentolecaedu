@@ -686,10 +686,18 @@ a:hover { opacity: 0.85; }
     try { document.execCommand("copy"); cb(); } catch(e) {}
   }
 
+  /* 
+   * VINCULAÇÃO COM O GOOGLE SHEETS
+   * Cole abaixo a URL gerada no Google Apps Script (terminada em /exec).
+   * Veja o arquivo "como-vincular-google-planilha.md" para o passo a passo.
+   */
+  var RSVP_URL = "https://script.google.com/macros/s/AKfycbzIiUibmCNaC4GNdpJT415sG6oKMXOiIBV53EwvOnamxM8SASDkWeDhj9j252LUD8H9/exec";
+
   // Contador de presença
   var form = document.getElementById("form-presenca");
   var inputNome = document.getElementById("nome");
   var inputQtd = document.getElementById("quantidade");
+  var btnEnviar = document.getElementById("enviar");
   var aviso = document.getElementById("aviso");
   var blocoObrigado = document.getElementById("obrigado");
 
@@ -720,10 +728,40 @@ a:hover { opacity: 0.85; }
         return;
       }
 
-      document.getElementById("obrigado-texto").textContent =
-        nome + " — " + qtd + (qtd === 1 ? " pessoa confirmada." : " pessoas confirmadas.") + " Esperamos você no dia 9 de janeiro de 2027!";
-      form.hidden = true;
-      blocoObrigado.hidden = false;
+      // Se a URL ainda não foi preenchida, faz uma demonstração de aviso
+      if (!RSVP_URL) {
+        aviso.textContent = "Aviso: A planilha do Google ainda não foi configurada no código.";
+        document.getElementById("obrigado-texto").textContent =
+          nome + " — " + qtd + (qtd === 1 ? " pessoa confirmada (modo de teste)." : " pessoas confirmadas (modo de teste).");
+        form.hidden = true;
+        blocoObrigado.hidden = false;
+        return;
+      }
+
+      // Envio real para o Google Sheets
+      btnEnviar.disabled = true;
+      aviso.textContent = "Confirmando presença, aguarde um instante...";
+
+      var formData = new FormData();
+      formData.append("nome", nome);
+      formData.append("quantidade", qtd);
+
+      fetch(RSVP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      })
+      .then(function () {
+        document.getElementById("obrigado-texto").textContent =
+          nome + " — " + qtd + (qtd === 1 ? " pessoa confirmada." : " pessoas confirmadas.") + " Esperamos você no dia 9 de janeiro de 2027!";
+        form.hidden = true;
+        blocoObrigado.hidden = false;
+        aviso.textContent = "";
+      })
+      .catch(function () {
+        btnEnviar.disabled = false;
+        aviso.textContent = "Não foi possível enviar sua confirmação. Por favor, tente novamente.";
+      });
     });
   }
 })();
