@@ -146,17 +146,18 @@ a:hover { opacity: 0.85; }
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 520px;
+  max-width: 680px;
   margin-inline: auto;
-  min-height: 120px;
+  margin-block: clamp(8px, 1.8vw, 22px);
+  min-height: 160px;
 }
 
 .hero-logo-img {
   width: 100%;
-  max-width: clamp(250px, 65vw, 420px);
+  max-width: clamp(320px, 85vw, 580px);
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 4px 14px rgba(123, 34, 7, 0.15));
+  filter: drop-shadow(0 4px 16px rgba(123, 34, 7, 0.15));
   transition: transform 0.25s ease;
   display: block;
 }
@@ -601,7 +602,7 @@ a:hover { opacity: 0.85; }
 <script>
 (function () {
   /*
-   * COLE AQUI A URL DO SEU APPS SCRIPT (TERMINADA EM /exec)
+   * URL do Google Apps Script configurada para envio direto à planilha
    */
   var RSVP_URL = "https://script.google.com/macros/s/AKfycbzIiUibmCNaC4GNdpJT415sG6oKMXOiIBV53EwvOnamxM8SASDkWeDhj9j252LUD8H9/exec";
 
