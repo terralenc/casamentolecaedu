@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helena &amp; Eduardo — 9 de Janeiro de 2027</title>
+<meta name="description" content="Casamento de Helena e Eduardo, 9 de janeiro de 2027. Informações para os convidados e confirmação de presença.">
+<meta name="theme-color" content="#F0DECA">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap">
+
+<style>
+:root {
+  --terracota: #A24711;
+  --barro: #7B2207;
+  --oliva: #7A7A3C;
+  --mata: #272E0F;
+  --areia: #F0DECA;
+  --areia-clara: #F8EFE5;
+  --mostarda: #C2B004;
+  --ocre: #E0A139;
+  --palha: #CDC179;
+
+  /* Imperial Script para títulos decorativos; Helvetica para o corpo */
+  --font-destaque: "Imperial Script", cursive;
+  --font-corpo: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --margem: clamp(16px, 4vw, 40px);
+  --largura: 1040px;
+  --borda: 10px;
+
+  /* Ruído e fibras de papel artesanal */
+  --grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='.34 .33 .33 0 0 .34 .33 .33 0 0 .34 .33 .33 0 0 0 0 0 0 1'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.25' intercept='-0.125'/%3E%3CfeFuncG type='linear' slope='1.25' intercept='-0.125'/%3E%3CfeFuncB type='linear' slope='1.25' intercept='-0.125'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  --manchas: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.007' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='.34 .33 .33 0 0 .34 .33 .33 0 0 .34 .33 .33 0 0 0 0 0 0 1'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='0.55' intercept='0.225'/%3E%3CfeFuncG type='linear' slope='0.55' intercept='0.225'/%3E%3CfeFuncB type='linear' slope='0.55' intercept='0.225'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  --fibras: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.09 .38' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .2 0 0 0 0 .1 9 0 0 0 -6.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.38'/%3E%3C/svg%3E");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--areia);
+  color: var(--mata);
+  font-family: var(--font-corpo);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+p { margin: 0; }
+h1, h2 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-destaque);
+  font-weight: 400;
+  text-wrap: balance;
+}
+h2 {
+  font-size: clamp(2.8rem, 6.2vw, 4.4rem);
+  line-height: 0.95;
+  color: var(--titulo);
+  letter-spacing: -0.01em;
+  margin: 0;
+  padding: 0;
+}
+a { color: inherit; transition: opacity 0.2s ease; }
+a:hover { opacity: 0.85; }
+
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; border-radius: 4px; }
+
+.faixa {
+  --fundo: var(--areia);
+  --texto: var(--mata);
+  --titulo: var(--terracota);
+  --foco: var(--terracota);
+  --linha: rgba(39, 46, 15, 0.3);
+  position: relative;
+  background-color: var(--fundo);
+  color: var(--texto);
+  padding-inline: var(--margem);
+  padding-block: calc(var(--borda) + clamp(48px, 6.5vw, 84px)) clamp(52px, 7vw, 92px);
+}
+.papel {
+  margin-top: calc(var(--borda) * -1);
+  background-image: var(--fibras), var(--grao), var(--manchas);
+  background-size: 420px 420px, 300px 300px, 900px 900px;
+  background-blend-mode: normal, overlay, soft-light;
+}
+
+/* Bordas irregulares rasgadas */
+.rasgo-1 { clip-path: polygon(0.00% 3.4px, 1.33% 3.6px, 2.67% 3.8px, 4.00% 4.2px, 5.33% 3.2px, 6.67% 4.9px, 8.00% 5.3px, 9.33% 4.6px, 10.67% 4.9px, 12.00% 6.7px, 13.33% 6.7px, 14.67% 5.5px, 16.00% 5.5px, 17.33% 6.8px, 18.67% 5.7px, 20.00% 7.1px, 21.33% 6.7px, 22.67% 8.7px, 24.00% 7.9px, 25.33% 9.1px, 26.67% 9.9px, 28.00% 9.4px, 29.33% 10.5px, 30.67% 10.4px, 32.00% 10.4px, 33.33% 10.2px, 34.67% 8.6px, 36.00% 7.8px, 37.33% 8.9px, 38.67% 6.9px, 40.00% 6.6px, 41.33% 7.5px, 42.67% 7.3px, 44.00% 7.8px, 45.33% 6.7px, 46.67% 7.6px, 48.00% 6.9px, 49.33% 7.8px, 50.67% 5.9px, 52.00% 5.6px, 53.33% 5.2px, 54.67% 4.8px, 56.00% 5.2px, 57.33% 4.0px, 58.67% 3.6px, 60.00% 5.1px, 61.33% 4.6px, 62.67% 4.9px, 64.00% 5.6px, 65.33% 5.8px, 66.67% 7.0px, 68.00% 7.0px, 69.33% 7.8px, 70.67% 7.2px, 72.00% 6.3px, 73.33% 5.9px, 74.67% 5.4px, 76.00% 5.1px, 77.33% 3.5px, 78.67% 4.3px, 80.00% 4.4px, 81.33% 4.9px, 82.67% 3.5px, 84.00% 4.5px, 85.33% 4.9px, 86.67% 4.2px, 88.00% 4.3px, 89.33% 2.8px, 90.67% 3.0px, 92.00% 1.8px, 93.33% 1.2px, 94.67% 2.7px, 96.00% 0.9px, 97.33% 2.5px, 98.67% 1.5px, 100.00% 2.5px, 100% 100%, 0% 100%); }
+.rasgo-2 { clip-path: polygon(0.00% 6.8px, 1.33% 5.7px, 2.67% 5.5px, 4.00% 5.4px, 5.33% 7.1px, 6.67% 6.8px, 8.00% 8.5px, 9.33% 8.9px, 10.67% 8.1px, 12.00% 9.4px, 13.33% 7.5px, 14.67% 8.8px, 16.00% 8.3px, 17.33% 7.5px, 18.67% 7.0px, 20.00% 7.8px, 21.33% 7.9px, 22.67% 7.8px, 24.00% 7.1px, 25.33% 6.9px, 26.67% 7.1px, 28.00% 8.0px, 29.33% 7.2px, 30.67% 6.4px, 32.00% 6.5px, 33.33% 4.7px, 34.67% 3.9px, 36.00% 4.8px, 37.33% 3.3px, 38.67% 3.5px, 40.00% 2.1px, 41.33% 2.3px, 42.67% 2.2px, 44.00% 3.7px, 45.33% 3.4px, 46.67% 4.0px, 48.00% 2.6px, 49.33% 3.0px, 50.67% 2.8px, 52.00% 2.2px, 53.33% 3.2px, 54.67% 1.3px, 56.00% 1.6px, 57.33% 3.3px, 58.67% 2.5px, 60.00% 5.1px, 61.33% 5.9px, 62.67% 4.8px, 64.00% 6.8px, 65.33% 6.5px, 66.67% 6.5px, 68.00% 7.3px, 69.33% 8.2px, 70.67% 7.3px, 72.00% 8.0px, 73.33% 6.7px, 74.67% 7.4px, 76.00% 7.9px, 77.33% 8.2px, 78.67% 7.1px, 80.00% 7.5px, 81.33% 9.5px, 82.67% 8.5px, 84.00% 9.5px, 85.33% 7.7px, 86.67% 7.2px, 88.00% 8.1px, 89.33% 6.9px, 90.67% 6.0px, 92.00% 6.0px, 93.33% 6.1px, 94.67% 5.5px, 96.00% 7.3px, 97.33% 6.5px, 98.67% 6.3px, 100.00% 7.1px, 100% 100%, 0% 100%); }
+.rasgo-3 { clip-path: polygon(0.00% 4.3px, 1.33% 3.3px, 2.67% 4.1px, 4.00% 4.7px, 5.33% 4.8px, 6.67% 6.0px, 8.00% 5.3px, 9.33% 5.7px, 10.67% 6.2px, 12.00% 5.6px, 13.33% 5.2px, 14.67% 4.3px, 16.00% 5.7px, 17.33% 5.7px, 18.67% 4.2px, 20.00% 5.2px, 21.33% 5.6px, 22.67% 5.7px, 24.00% 6.4px, 25.33% 5.8px, 26.67% 5.0px, 28.00% 5.9px, 29.33% 5.0px, 30.67% 3.6px, 32.00% 4.5px, 33.33% 2.0px, 34.67% 2.7px, 36.00% 2.1px, 37.33% 2.3px, 38.67% 0.6px, 40.00% 0.8px, 41.33% 1.4px, 42.67% 1.9px, 44.00% 3.2px, 45.33% 2.9px, 46.67% 5.4px, 48.00% 5.4px, 49.33% 6.0px, 50.67% 4.9px, 52.00% 5.3px, 53.33% 5.7px, 54.67% 6.1px, 56.00% 5.9px, 57.33% 5.0px, 58.67% 5.7px, 60.00% 6.4px, 61.33% 6.8px, 62.67% 6.6px, 64.00% 6.5px, 65.33% 7.8px, 66.67% 8.0px, 68.00% 7.6px, 69.33% 5.7px, 70.67% 5.5px, 72.00% 4.7px, 73.33% 4.0px, 74.67% 4.8px, 76.00% 4.7px, 77.33% 5.7px, 78.67% 5.6px, 80.00% 5.4px, 81.33% 6.2px, 82.67% 8.0px, 84.00% 8.6px, 85.33% 8.7px, 86.67% 9.0px, 88.00% 8.9px, 89.33% 9.6px, 90.67% 8.7px, 92.00% 8.7px, 93.33% 8.5px, 94.67% 8.0px, 96.00% 8.2px, 97.33% 9.4px, 98.67% 9.3px, 100.00% 9.5px, 100% 100%, 0% 100%); }
+.rasgo-4 { clip-path: polygon(0.00% 8.9px, 1.33% 9.6px, 2.67% 11.5px, 4.00% 10.2px, 5.33% 10.4px, 6.67% 8.5px, 8.00% 8.8px, 9.33% 7.0px, 10.67% 8.3px, 12.00% 7.3px, 13.33% 6.1px, 14.67% 7.1px, 16.00% 6.6px, 17.33% 6.8px, 18.67% 7.6px, 20.00% 6.7px, 21.33% 6.8px, 22.67% 6.1px, 24.00% 6.0px, 25.33% 5.3px, 26.67% 4.7px, 28.00% 6.1px, 29.33% 5.8px, 30.67% 7.4px, 32.00% 6.6px, 33.33% 6.6px, 34.67% 7.9px, 36.00% 8.3px, 37.33% 6.2px, 38.67% 5.9px, 40.00% 5.9px, 41.33% 5.2px, 42.67% 5.5px, 44.00% 4.6px, 45.33% 6.0px, 46.67% 5.0px, 48.00% 4.8px, 49.33% 4.4px, 50.67% 4.5px, 52.00% 4.2px, 53.33% 2.2px, 54.67% 1.5px, 56.00% 1.5px, 57.33% 1.6px, 58.67% 1.6px, 60.00% 1.7px, 61.33% 2.8px, 62.67% 2.4px, 64.00% 4.6px, 65.33% 3.1px, 66.67% 4.3px, 68.00% 3.1px, 69.33% 4.5px, 70.67% 4.1px, 72.00% 3.9px, 73.33% 5.1px, 74.67% 5.3px, 76.00% 5.9px, 77.33% 6.8px, 78.67% 7.9px, 80.00% 7.5px, 81.33% 7.7px, 82.67% 6.4px, 84.00% 7.6px, 85.33% 6.8px, 86.67% 6.8px, 88.00% 6.2px, 89.33% 5.5px, 90.67% 6.8px, 92.00% 6.4px, 93.33% 6.4px, 94.67% 6.5px, 96.00% 6.2px, 97.33% 6.7px, 98.67% 5.9px, 100.00% 6.9px, 100% 100%, 0% 100%); }
+.rasgo-5 { clip-path: polygon(0.00% 8.2px, 1.33% 8.8px, 2.67% 8.7px, 4.00% 9.1px, 5.33% 10.3px, 6.67% 10.3px, 8.00% 8.3px, 9.33% 8.9px, 10.67% 7.2px, 12.00% 7.7px, 13.33% 5.7px, 14.67% 6.5px, 16.00% 5.4px, 17.33% 5.8px, 18.67% 5.9px, 20.00% 5.7px, 21.33% 5.2px, 22.67% 5.7px, 24.00% 4.4px, 25.33% 3.4px, 26.67% 4.2px, 28.00% 3.4px, 29.33% 2.4px, 30.67% 2.0px, 32.00% 3.3px, 33.33% 1.6px, 34.67% 3.0px, 36.00% 2.7px, 37.33% 3.0px, 38.67% 3.3px, 40.00% 4.0px, 41.33% 5.5px, 42.67% 5.3px, 44.00% 5.6px, 45.33% 6.3px, 46.67% 6.1px, 48.00% 4.8px, 49.33% 6.0px, 50.67% 3.7px, 52.00% 4.7px, 53.33% 2.9px, 54.67% 3.4px, 56.00% 2.8px, 57.33% 4.2px, 58.67% 4.6px, 60.00% 4.8px, 61.33% 4.1px, 62.67% 4.9px, 64.00% 3.7px, 65.33% 5.2px, 66.67% 3.9px, 68.00% 5.0px, 69.33% 5.1px, 70.67% 4.2px, 72.00% 4.7px, 73.33% 5.5px, 74.67% 6.1px, 76.00% 6.2px, 77.33% 7.6px, 78.67% 7.1px, 80.00% 8.7px, 81.33% 9.4px, 82.67% 10.5px, 84.00% 10.5px, 85.33% 9.0px, 86.67% 10.7px, 88.00% 10.2px, 89.33% 8.7px, 90.67% 7.6px, 92.00% 8.5px, 93.33% 8.0px, 94.67% 7.2px, 96.00% 8.2px, 97.33% 7.9px, 98.67% 7.6px, 100.00% 7.1px, 100% 100%, 0% 100%); }
+.rasgo-6 { clip-path: polygon(0.00% 5.8px, 1.33% 4.4px, 2.67% 4.8px, 4.00% 5.9px, 5.33% 6.2px, 6.67% 6.6px, 8.00% 5.3px, 9.33% 6.4px, 10.67% 6.6px, 12.00% 7.3px, 13.33% 5.8px, 14.67% 6.3px, 16.00% 5.4px, 17.33% 5.1px, 18.67% 4.8px, 20.00% 4.4px, 21.33% 5.8px, 22.67% 4.9px, 24.00% 6.6px, 25.33% 7.4px, 26.67% 7.3px, 28.00% 8.4px, 29.33% 9.1px, 30.67% 8.9px, 32.00% 8.8px, 33.33% 7.7px, 34.67% 7.7px, 36.00% 8.7px, 37.33% 8.0px, 38.67% 9.5px, 40.00% 9.3px, 41.33% 9.9px, 42.67% 8.8px, 44.00% 9.9px, 45.33% 9.1px, 46.67% 9.5px, 48.00% 8.0px, 49.33% 6.4px, 50.67% 5.8px, 52.00% 4.4px, 53.33% 5.6px, 54.67% 3.8px, 56.00% 4.5px, 57.33% 4.8px, 58.67% 3.5px, 60.00% 3.7px, 61.33% 3.4px, 62.67% 3.4px, 64.00% 4.2px, 65.33% 2.5px, 66.67% 3.5px, 68.00% 2.3px, 69.33% 2.8px, 70.67% 2.4px, 72.00% 3.9px, 73.33% 2.9px, 74.67% 4.7px, 76.00% 4.2px, 77.33% 5.1px, 78.67% 6.4px, 80.00% 6.5px, 81.33% 5.4px, 82.67% 5.9px, 83.33% 6.0px, 84.67% 5.6px, 86.00% 4.8px, 87.33% 5.2px, 88.67% 5.7px, 90.00% 5.1px, 91.33% 5.8px, 92.67% 7.5px, 94.00% 7.4px, 95.33% 7.6px, 96.67% 6.3px, 98.00% 5.4px, 99.33% 5.5px, 100.00% 5.7px, 100% 100%, 0% 100%); }
+
+.faixa--terracota { --fundo: var(--terracota); --texto: var(--areia); --titulo: var(--areia); --foco: var(--areia); --linha: rgba(240, 222, 202, 0.45); }
+.faixa--mata      { --fundo: var(--mata);      --texto: var(--areia); --titulo: var(--ocre);  --foco: var(--ocre);  --linha: rgba(240, 222, 202, 0.4); }
+.faixa--barro     { --fundo: var(--barro);     --texto: var(--areia); --titulo: var(--ocre);  --foco: var(--ocre);  --linha: rgba(240, 222, 202, 0.45); }
+.faixa--palha     { --fundo: var(--palha);     --texto: var(--mata);  --titulo: var(--barro); --foco: var(--barro); }
+
+.coluna { max-width: var(--largura); margin-inline: auto; width: 100%; }
+.dupla { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 8fr); gap: clamp(16px, 3.5vw, 44px); align-items: start; }
+.dupla > * { min-width: 0; }
+.texto { display: grid; gap: 0.95em; max-width: 62ch; font-size: 1.05rem; }
+
+.topo {
+  background-color: var(--areia);
+  color: var(--mata);
+  --linha: rgba(123, 34, 7, 0.28);
+  padding-block: clamp(24px, 3.5vw, 42px) clamp(54px, 7.5vw, 92px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ilustração Fundo.png tratada para contrastar com areia clara */
+.topo-bg-ilustracao {
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-hero, url('Fundo.png'), url('fundo.jpg'), url('fundo.png'));
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.28;
+  filter: invert(1) contrast(1.2);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.4s ease;
+}
+
+.topo .coluna {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(16px, 2.8vw, 26px);
+  justify-items: center;
+}
+
+.hero-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  min-height: 120px;
+}
+
+.hero-logo-img {
+  width: 100%;
+  max-width: clamp(250px, 65vw, 420px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(123, 34, 7, 0.15));
+  transition: transform 0.25s ease;
+  display: block;
+}
+.hero-logo-img:hover { transform: scale(1.015); }
+
+/* Logo reserva enquanto o arquivo local não for inserido */
+.hero-logo-fallback {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border: 2px dashed rgba(162, 71, 17, 0.5);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  max-width: 440px;
+}
+.hero-logo-fallback.ativo { display: flex; }
+.hero-logo-fallback h1 {
+  font-size: clamp(3.2rem, 9vw, 5rem);
+  color: var(--barro);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px clamp(12px, 3vw, 24px);
+  font-size: 0.88rem;
+  font-weight: 400; /* Normal conforme solicitado */
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.menu a {
+  text-decoration: none;
+  font-weight: 400;
+  color: var(--barro);
+  padding: 4px 2px;
+  border-bottom: 1.5px solid transparent;
+}
+.menu a:hover { border-bottom-color: var(--barro); }
+
+.dados {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  border-block: 2px dotted var(--linha);
+  text-align: left;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 6px;
+}
+.dados div { padding: clamp(12px, 2vw, 20px) clamp(12px, 1.8vw, 20px); min-width: 0; }
+.dados div + div { border-left: 2px dotted var(--linha); }
+.dados dt {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+  color: var(--barro);
+}
+.dados dd { margin: 0; }
+.dados .forte { font-size: 1.08rem; font-weight: 600; line-height: 1.3; color: var(--mata); letter-spacing: -0.01em; }
+.dados .fino { font-size: 0.9rem; margin-top: 4px; color: var(--mata); opacity: 0.9; }
+.dados a { text-underline-offset: 3px; font-weight: 600; color: var(--terracota); }
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: inherit;
+  font-size: 0.98rem;
+  font-weight: 700;
+  padding: 11px 26px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--areia);
+  color: var(--barro);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+  letter-spacing: -0.01em;
+}
+.botao:hover {
+  background: var(--areia-clara);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(0,0,0,0.18);
+}
+.topo .botao {
+  background: var(--terracota);
+  color: var(--areia);
+}
+.topo .botao:hover {
+  background: var(--barro);
+  color: var(--areia-clara);
+}
+
+.coluna-com-ornamento {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.ornamento-pessoas-queridas {
+  max-width: clamp(120px, 20vw, 180px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+  display: block;
+}
+
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+.trio section {
+  padding-inline: clamp(12px, 2.2vw, 28px);
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-width: 0;
+}
+.trio section:first-child { padding-left: 0; }
+.trio section:last-child { padding-right: 0; }
+.trio section + section { border-left: 2px dotted var(--linha); }
+
+.faixa--presentes-renda {
+  position: relative;
+  background-color: #EFE3D5;
+  overflow: hidden;
+}
+.presentes-bg-renda {
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-renda, url('Fundo renda.png'), url('fundo renda.jpg'), url('fundo renda.png'));
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+.faixa--presentes-renda .coluna {
+  position: relative;
+  z-index: 1;
+}
+
+/* Lista PIX */
+.pix {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  border-top: 2px dotted var(--linha);
+}
+.pix li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  align-items: center;
+  padding-block: 12px;
+  border-bottom: 2px dotted var(--linha);
+}
+.pix .nome { font-weight: 700; font-size: 1.08rem; letter-spacing: -0.01em; }
+.pix .chave {
+  grid-column: 1;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+  user-select: all;
+  font-family: monospace;
+  font-size: 0.92rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 3px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+.pix button {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  min-width: 9.5em;
+  border: 2px solid var(--terracota);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--barro);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: -0.01em;
+}
+.pix li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 20px;
+  align-items: center;
+  padding-block: 20px;
+  border-bottom: 2px dotted var(--linha);
+}
+.pix .nome { font-weight: 700; font-size: 1.15rem; }
+.pix .chave {
+  grid-column: 1;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+  user-select: all;
+  font-family: monospace;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+.pix button {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 10px 18px;
+  min-width: 10.5em;
+  border: 2px solid var(--terracota);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--barro);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.pix button:hover, .pix button.feito {
+  background: var(--terracota);
+  color: var(--areia);
+  border-color: var(--terracota);
+}
+
+.presenca { display: grid; gap: 16px; max-width: 32rem; }
+.campo { display: grid; gap: 6px; }
+.campo label { font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; }
+.campo input {
+  font: inherit;
+  color: var(--mata);
+  width: 100%;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--areia);
+}
+.conta {
+  display: grid;
+  grid-template-columns: 52px 6rem 52px;
+  gap: 8px;
+}
+.conta input {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 1.25rem;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.conta input::-webkit-outer-spin-button, .conta input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.conta button {
+  font: inherit;
+  font-size: 1.5rem;
+  border: 2px solid var(--areia);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--areia);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.conta button:hover { background: var(--areia); color: var(--barro); }
+
+.aviso { min-height: 1.6em; font-size: 0.95rem; font-weight: 600; color: #FFE6A8; }
+.aviso:empty { display: none; }
+.obrigado {
+  display: grid;
+  gap: 12px;
+  font-size: 1.2rem;
+  background: rgba(240, 222, 202, 0.15);
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px dashed var(--linha);
+}
+.rodape { text-align: center; padding-bottom: clamp(20px, 3.5vw, 36px); }
+.rodape .assinatura-texto {
+  font-family: var(--font-destaque);
+  font-size: clamp(3rem, 6.8vw, 4.6rem);
+  line-height: 0.95;
+  color: var(--ocre);
+  letter-spacing: -0.01em;
+  margin: 0;
+  padding: 0;
+}
+
+.painel-midia {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #FFF;
+  color: var(--barro);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  padding: 16px;
+  max-width: 320px;
+  font-size: 0.85rem;
+  border: 2px solid var(--terracota);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.painel-midia.minimizado {
+  transform: translateY(calc(100% - 46px));
+}
+.painel-midia-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.painel-midia-btn {
+  background: var(--terracota);
+  color: #FFF;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  justify-content: center;
+}
+.painel-midia-btn:hover { background: var(--barro); }
+.painel-midia-status {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.35;
+}
+
+@media (max-width: 768px) {
+  .dupla { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .dados { grid-template-columns: minmax(0, 1fr); }
+  .dados div { padding-inline: 14px; }
+  .dados div + div { border-left: 0; border-top: 2px dotted var(--linha); }
+  .trio { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .trio section, .trio section:first-child, .trio section:last-child { padding-inline: 0; }
+  .trio section + section { border-left: 0; border-top: 2px dotted var(--linha); padding-top: 32px; }
+  .pix li { grid-template-columns: minmax(0, 1fr); }
+  .pix button { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 8px; width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header class="faixa topo" id="topo">
+  <!-- Imagem de fundo Fundo.png com efeito de mesclagem suave -->
+  <div class="topo-bg-ilustracao" id="bg-hero" aria-hidden="true"></div>
+
+  <div class="coluna">
+    <nav class="menu" aria-label="Seções da página">
+      <a href="#informacoes">Informações</a>
+      <a href="#presentes">Presentes</a>
+      <a href="#presenca">Confirmar presença</a>
+      <a href="#historia">Nossa história</a>
+    </nav>
+
+    <!-- LOGO OFICIAL NO HERO: logo.png (com fallback e uploader integrado) -->
+    <div class="hero-logo-wrapper">
+      <img
+        src="logo.png"
+        alt="Helena &amp; Eduardo"
+        class="hero-logo-img"
+        id="img-logo"
+        loading="eager"
+      >
+      <div class="hero-logo-fallback" id="logo-fallback">
+        <h1>Helena &amp; Eduardo</h1>
+        <p style="font-size: 0.95rem; color: var(--barro);">Clique no painel de imagens no canto para carregar sua logo.png</p>
+      </div>
+    </div>
+
+    <dl class="dados">
+      <div>
+        <dt>Quando</dt>
+        <dd>
+          <p class="forte">Sábado, 9 de janeiro de 2027</p>
+          <p class="forte">às 10h30</p>
+        </dd>
+      </div>
+      <div>
+        <dt>Onde</dt>
+        <dd>
+          <p class="forte">Clube do Condomínio Villa Três Lagoas</p>
+          <p class="fino">Rodovia BR-232, Km 19, s/n, Engenho Caxito, Jaboatão dos Guararapes/PE</p>
+          <p class="fino"><a href="https://www.google.com/maps/search/?api=1&amp;query=Condom%C3%ADnio%20Villa%20Tr%C3%AAs%20Lagoas%2C%20BR-232%2C%20Km%2019%2C%20Jaboat%C3%A3o%20dos%20Guararapes%2C%20PE" target="_blank" rel="noopener">Abrir no Google Maps &rarr;</a></p>
+        </dd>
+      </div>
+      <div>
+        <dt>Traje</dt>
+        <dd>
+          <p class="forte">Casual / Esportivo</p>
+          <p class="fino">Confortável para gramado</p>
+        </dd>
+      </div>
+    </dl>
+
+    <a class="botao" href="#presenca">
+      <span>Confirmar presença</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="faixa papel rasgo-1 faixa--terracota" aria-labelledby="t-carta">
+    <div class="coluna dupla">
+      <div class="coluna-com-ornamento">
+        <h2 id="t-carta">Pessoas queridas,</h2>
+        <img
+          src="Ilustração_Sem_Título 3.png"
+          alt=""
+          class="ornamento-pessoas-queridas"
+          id="img-ornamento"
+        >
+      </div>
+      <div class="texto">
+        <p>Esperamos vocês no dia 9 de janeiro de 2027 para celebrar conosco a felicidade dos bons encontros, aqueles que abrem sorrisos instantâneos e pedem abraços longos e apertados. Saibam que, se estão lendo esta mensagem, é porque são fundamentais para nós!</p>
+        <p>Reunimos nesta página algumas informações importantes sobre o evento, para que todos tenhamos um dia leve, animado e inesquecível juntos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informações práticas (Vestimenta, Transporte, Crianças) -->
+  <div class="faixa papel rasgo-2 faixa--mata" id="informacoes">
+    <div class="coluna trio">
+      <section aria-labelledby="t-vestimentas">
+        <h2 id="t-vestimentas">Vestimentas</h2>
+        <p>O casamento será durante o dia e bem informal: o espaço é aberto, com gramado e calçamento em pedras naturais. Sugerimos roupas frescas e sapatos confortáveis ou baixos (os noivos estarão de tênis!).</p>
+      </section>
+      <section aria-labelledby="t-transporte">
+        <h2 id="t-transporte">Transporte</h2>
+        <p>O condomínio fica na BR-232, em frente ao Recife Outlet. Na volta, aplicativos como Uber podem demorar. Nossa dica é organizar vans ou caronas compartilhadas por grupos para todos curtirem à vontade.</p>
+      </section>
+      <section aria-labelledby="t-kids">
+        <h2 id="t-kids">Área Kids</h2>
+        <p>As crianças são extremamente bem-vindas! Teremos recreação especial com a turma da Farrinha Criativa, além de um cardápio leve e pensado com muito carinho para elas.</p>
+      </section>
+    </div>
+  </div>
+
+  <section class="faixa papel rasgo-3 faixa--presentes-renda" id="presentes" aria-labelledby="t-presentes">
+    <div class="presentes-bg-renda" id="bg-renda" aria-hidden="true"></div>
+    <div class="coluna dupla">
+      <h2 id="t-presentes">Presentes</h2>
+      <div class="texto">
+        <p>O melhor presente para nós é celebrar este momento ao seu lado! Se você quiser expressar seu carinho com um presente, ficaremos honrados se puder fazer uma doação para uma das causas sociais que apoiamos:</p>
+        <ul class="pix">
+          <li>
+            <span class="nome">Lar de Clara</span>
+            <div class="chave">Pix: <span id="pix-1">07.082.502/0001-58</span></div>
+            <button type="button" id="copiar-1" data-copiar="pix-1">Copiar chave</button>
+          </li>
+          <li>
+            <span class="nome">Abrigo Espírita Lar de Jesus</span>
+            <div class="chave">Pix: <span id="pix-2">09.789.116/0001-26</span></div>
+            <button type="button" id="copiar-2" data-copiar="pix-2">Copiar chave</button>
+          </li>
+          <li>
+            <span class="nome">Abrigo de Seu Alberto</span>
+            <div class="chave">Pix: <span id="pix-3">abrigodeseualbertoo@gmail.com</span></div>
+            <button type="button" id="copiar-3" data-copiar="pix-3">Copiar chave</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário de confirmação de presença (RSVP) -->
+  <section class="faixa papel rasgo-4 faixa--barro" id="presenca" aria-labelledby="t-presenca">
+    <div class="coluna dupla">
+      <h2 id="t-presenca">Confirme sua presença</h2>
+      <div>
+        <form class="presenca" id="form-presenca" novalidate>
+          <div class="campo">
+            <label for="nome">Seu nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="quantidade">Quantas pessoas (incluindo você)?</label>
+            <div class="conta">
+              <button type="button" id="menos" aria-label="Diminuir quantidade">−</button>
+              <input type="number" id="quantidade" name="quantidade" inputmode="numeric" min="1" max="20" value="1" required>
+              <button type="button" id="mais" aria-label="Aumentar quantidade">+</button>
+            </div>
+          </div>
+          <button type="submit" class="botao" id="enviar">
+            <span>Confirmar presença</span>
+          </button>
+          <p class="aviso" id="aviso" role="status" aria-live="polite"></p>
+        </form>
+        <div class="obrigado" id="obrigado" role="status" hidden>
+          <p><strong id="obrigado-titulo" style="font-size: 1.3rem;">Presença confirmada!</strong></p>
+          <p id="obrigado-texto"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção da história dos noivos -->
+  <section class="faixa papel rasgo-5 faixa--palha" id="historia" aria-labelledby="t-historia">
+    <div class="coluna dupla">
+      <h2 id="t-historia">Nossa história</h2>
+      <div class="texto">
+        <p>Um encontro no momento certo, conversas que pareciam não ter fim e a certeza de que a vida é muito melhor quando dividida a dois.</p>
+        <p>Em breve, compartilharemos por aqui um pouquinho mais dos capítulos que nos trouxeram até este dia tão especial!</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="faixa papel rasgo-6 faixa--mata rodape">
+  <div class="coluna">
+    <p class="assinatura-texto">Helena &amp; Eduardo</p>
+    <p style="margin-top: 4px; opacity: 0.9; font-size: 1rem; font-family: var(--font-corpo);">9 de janeiro de 2027 &bull; Jaboatão dos Guararapes - PE</p>
+  </div>
+</footer>
+
+<div class="painel-midia" id="painel-midia">
+  <div class="painel-midia-header" id="painel-toggle" title="Minimizar ou expandir">
+    <span>🖼️ Imagens do Convite</span>
+    <span id="painel-seta">▾</span>
+  </div>
+  <p style="margin-bottom: 8px; color:#666;">Na prévia, selecione suas imagens para vê-las agora:</p>
+  <label class="painel-midia-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    <span>Carregar imagem(ns)...</span>
+    <input type="file" id="input-geral-imagens" multiple accept="image/*" style="display:none">
+  </label>
+  <div class="painel-midia-status" id="painel-status">
+    Dica: Você pode selecionar <code>logo.png</code>, <code>Fundo.png</code>, <code>Fundo renda.png</code> de uma vez só!
+  </div>
+</div>
+
+<script>
+(function () {
+  var imgLogo = document.getElementById("img-logo");
+  var logoFallback = document.getElementById("logo-fallback");
+  var bgHero = document.getElementById("bg-hero");
+  var bgRenda = document.getElementById("bg-renda");
+  var imgOrnamento = document.getElementById("img-ornamento");
+  var inputImagens = document.getElementById("input-geral-imagens");
+  var painelStatus = document.getElementById("painel-status");
+  var painel = document.getElementById("painel-midia");
+  var painelToggle = document.getElementById("painel-toggle");
+  var painelSeta = document.getElementById("painel-seta");
+
+  // Alternar painel
+  painelToggle.addEventListener("click", function() {
+    painel.classList.toggle("minimizado");
+    painelSeta.textContent = painel.classList.contains("minimizado") ? "▴" : "▾";
+  });
+
+  // Tratamento de erro na logo (se falhar relative path, mostra fallback limpo)
+  imgLogo.addEventListener("error", function () {
+    if (!imgLogo.dataset.blobCarregado) {
+      imgLogo.style.display = "none";
+      logoFallback.classList.add("ativo");
+    }
+  });
+  imgLogo.addEventListener("load", function () {
+    imgLogo.style.display = "block";
+    logoFallback.classList.remove("ativo");
+  });
+
+  // Carregar imagens do cache da sessão se já tiverem sido escolhidas
+  function restaurarCache() {
+    try {
+      var sLogo = sessionStorage.getItem("img_logo");
+      if (sLogo) aplicarImagem("logo", sLogo);
+
+      var sFundo = sessionStorage.getItem("img_fundo");
+      if (sFundo) aplicarImagem("fundo", sFundo);
+
+      var sRenda = sessionStorage.getItem("img_renda");
+      if (sRenda) aplicarImagem("renda", sRenda);
+
+      var sOrnamento = sessionStorage.getItem("img_ornamento");
+      if (sOrnamento) aplicarImagem("ornamento", sOrnamento);
+    } catch(e) {}
+  }
+
+  function aplicarImagem(tipo, url) {
+    if (tipo === "logo") {
+      imgLogo.dataset.blobCarregado = "true";
+      imgLogo.src = url;
+      imgLogo.style.display = "block";
+      logoFallback.classList.remove("ativo");
+    } else if (tipo === "fundo") {
+      bgHero.style.backgroundImage = 'url("' + url + '")';
+      bgHero.style.opacity = "0.35";
+    } else if (tipo === "renda") {
+      bgRenda.style.backgroundImage = 'url("' + url + '")';
+      bgRenda.style.opacity = "0.45";
+    } else if (tipo === "ornamento") {
+      imgOrnamento.src = url;
+      imgOrnamento.style.display = "block";
+    }
+  }
+
+  // Identificação e atribuição automática dos arquivos selecionados
+  inputImagens.addEventListener("change", function (e) {
+    var files = Array.from(e.target.files || []);
+    if (!files.length) return;
+
+    var carregados = [];
+    files.forEach(function (file) {
+      var nome = file.name.toLowerCase();
+      var objUrl = URL.createObjectURL(file);
+
+      if (nome.includes("renda")) {
+        aplicarImagem("renda", objUrl);
+        carregados.push("Fundo renda");
+      } else if (nome.includes("logo")) {
+        aplicarImagem("logo", objUrl);
+        carregados.push("Logo");
+      } else if (nome.includes("fundo") || nome.includes("sitio") || nome.includes("casa")) {
+        aplicarImagem("fundo", objUrl);
+        carregados.push("Fundo Hero");
+      } else if (nome.includes("ilustra") || nome.includes("ornamento") || nome.includes("3")) {
+        aplicarImagem("ornamento", objUrl);
+        carregados.push("Ornamento");
+      } else {
+        // Se só tem 1 arquivo selecionado e não identificou o nome, assume a logo
+        if (files.length === 1) {
+          aplicarImagem("logo", objUrl);
+          carregados.push("Logo");
+        }
+      }
+
+      // Guardar em base64 se couber para não perder no refresh
+      if (file.size < 2500000) {
+        var reader = new FileReader();
+        reader.onload = function(evt) {
+          var dataUrl = evt.target.result;
+          try {
+            if (nome.includes("renda")) sessionStorage.setItem("img_renda", dataUrl);
+            else if (nome.includes("logo")) sessionStorage.setItem("img_logo", dataUrl);
+            else if (nome.includes("fundo")) sessionStorage.setItem("img_fundo", dataUrl);
+            else if (nome.includes("ilustra") || nome.includes("3")) sessionStorage.setItem("img_ornamento", dataUrl);
+          } catch(err) {}
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    if (carregados.length) {
+      painelStatus.innerHTML = "✅ <strong>" + carregados.join(", ") + "</strong> carregado(s) com sucesso na prévia!";
+      painelStatus.style.color = "#1e7e34";
+    }
+  });
+
+  restaurarCache();
+
+  document.querySelectorAll("[data-copiar]").forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      var idAlvo = botao.dataset.copiar;
+      var elemento = document.getElementById(idAlvo);
+      if (!elemento) return;
+
+      var textoPix = elemento.textContent.trim();
+      var marcarCopiado = function () {
+        var original = botao.textContent;
+        botao.textContent = "✓ Chave copiada!";
+        botao.classList.add("feito");
+        setTimeout(function () {
+          botao.textContent = original;
+          botao.classList.remove("feito");
+        }, 2500);
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(textoPix).then(marcarCopiado).catch(function () {
+          copiarTextoFallback(elemento, marcarCopiado);
+        });
+      } else {
+        copiarTextoFallback(elemento, marcarCopiado);
+      }
+    });
+  });
+
+  function copiarTextoFallback(el, cb) {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    try { document.execCommand("copy"); cb(); } catch(e) {}
+  }
+
+  // Contador de presença
+  var form = document.getElementById("form-presenca");
+  var inputNome = document.getElementById("nome");
+  var inputQtd = document.getElementById("quantidade");
+  var aviso = document.getElementById("aviso");
+  var btnEnviar = document.getElementById("enviar");
+  var blocoObrigado = document.getElementById("obrigado");
+
+  function ajustar(d) {
+    var val = parseInt(inputQtd.value, 10);
+    if (isNaN(val)) val = 1;
+    inputQtd.value = Math.min(20, Math.max(1, val + d));
+  }
+  document.getElementById("menos").addEventListener("click", function () { ajustar(-1); });
+  document.getElementById("mais").addEventListener("click", function () { ajustar(1); });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var nome = inputNome.value.trim();
+    var qtd = parseInt(inputQtd.value, 10);
+
+    if (!nome) {
+      aviso.textContent = "Por favor, digite seu nome.";
+      inputNome.focus();
+      return;
+    }
+    if (isNaN(qtd) || qtd < 1 || qtd > 20) {
+      aviso.textContent = "Informe a quantidade de pessoas (entre 1 e 20).";
+      inputQtd.focus();
+      return;
+    }
+
+    document.getElementById("obrigado-texto").textContent =
+      nome + " — " + qtd + (qtd === 1 ? " pessoa confirmada." : " pessoas confirmadas.") + " Esperamos você no dia 9 de janeiro de 2027!";
+    form.hidden = true;
+    blocoObrigado.hidden = false;
+  });
+})();
+</script>
+</body>
+</html>
