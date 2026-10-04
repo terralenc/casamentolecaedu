@@ -280,7 +280,7 @@ a:hover { opacity: 0.85; }
 .presentes-bg-renda {
   position: absolute;
   inset: 0;
-  background-image: url('Fundo renda.png'), url('fundo renda.jpg'), url('fundo renda.png');
+  background-image: url('Fundo renda.png'), url('fundo renda.jpg'), url('fundo-renda.png'), url('fundo-renda.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -490,6 +490,7 @@ a:hover { opacity: 0.85; }
           src="Ilustração_Sem_Título 3.png"
           alt=""
           class="ornamento-pessoas-queridas"
+          onerror="this.onerror=null; this.src='ilustracao-3.png';"
         >
       </div>
       <div class="texto">
@@ -684,7 +685,7 @@ a:hover { opacity: 0.85; }
       }
 
       if (!RSVP_URL) {
-        aviso.textContent = "Aviso: A URL da planilha ainda não foi colada no código (linha ~370).";
+        aviso.textContent = "Aviso: A URL da planilha ainda não foi configurada.";
         document.getElementById("obrigado-texto").textContent =
           nome + " — " + qtd + (qtd === 1 ? " pessoa (modo de teste)." : " pessoas (modo de teste).");
         form.hidden = true;
