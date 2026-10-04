@@ -23,7 +23,6 @@
   --ocre: #E0A139;
   --palha: #CDC179;
 
-  /* Imperial Script para títulos decorativos; Helvetica para o corpo */
   --font-destaque: "Imperial Script", cursive;
   --font-corpo: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -31,9 +30,9 @@
   --largura: 1040px;
   --borda: 10px;
 
-  /* Ruído e fibras de papel artesanal */
+  /* Textura de papel artesanal */
   --grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='.34 .33 .33 0 0 .34 .33 .33 0 0 .34 .33 .33 0 0 .34 .33 .33 0 0 0 0 0 0 1'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.25' intercept='-0.125'/%3E%3CfeFuncG type='linear' slope='1.25' intercept='-0.125'/%3E%3CfeFuncB type='linear' slope='1.25' intercept='-0.125'/%3E%3CfeFuncB type='linear' slope='1.25' intercept='-0.125'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
-  --manchas: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.007' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='.34 .33 .33 0 0 .34 .33 .33 0 0 .34 .33 .33 0 0 0 0 0 0 1'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='0.55' intercept='0.225'/%3E%3CfeFuncG type='linear' slope='0.55' intercept='0.225'/%3E%3CfeFuncB type='linear' slope='0.55' intercept='0.225'/%3E%3CfeFuncB type='linear' slope='0.55' intercept='0.225'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  --manchas: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.007' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='.34 .33 .33 0 0 .34 .33 .33 0 0 .34 .33 .33 0 0 .34 .33 .33 0 0 0 0 0 0 1'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='0.55' intercept='0.225'/%3E%3CfeFuncG type='linear' slope='0.55' intercept='0.225'/%3E%3CfeFuncB type='linear' slope='0.55' intercept='0.225'/%3E%3CfeFuncB type='linear' slope='0.55' intercept='0.225'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
   --fibras: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.09 .38' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .2 0 0 0 0 .1 9 0 0 0 -6.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.38'/%3E%3C/svg%3E");
 }
 
@@ -91,7 +90,7 @@ a:hover { opacity: 0.85; }
   background-blend-mode: normal, overlay, soft-light;
 }
 
-/* Bordas irregulares rasgadas */
+/* Bordas rasgadas artesanais */
 .rasgo-1 { clip-path: polygon(0.00% 3.4px, 1.33% 3.6px, 2.67% 3.8px, 4.00% 4.2px, 5.33% 3.2px, 6.67% 4.9px, 8.00% 5.3px, 9.33% 4.6px, 10.67% 4.9px, 12.00% 6.7px, 13.33% 6.7px, 14.67% 5.5px, 16.00% 5.5px, 17.33% 6.8px, 18.67% 5.7px, 20.00% 7.1px, 21.33% 6.7px, 22.67% 8.7px, 24.00% 7.9px, 25.33% 9.1px, 26.67% 9.9px, 28.00% 9.4px, 29.33% 10.5px, 30.67% 10.4px, 32.00% 10.4px, 33.33% 10.2px, 34.67% 8.6px, 36.00% 7.8px, 37.33% 8.9px, 38.67% 6.9px, 40.00% 6.6px, 41.33% 7.5px, 42.67% 7.3px, 44.00% 7.8px, 45.33% 6.7px, 46.67% 7.6px, 48.00% 6.9px, 49.33% 7.8px, 50.67% 5.9px, 52.00% 5.6px, 53.33% 5.2px, 54.67% 4.8px, 56.00% 5.2px, 57.33% 4.0px, 58.67% 3.6px, 60.00% 5.1px, 61.33% 4.6px, 62.67% 4.9px, 64.00% 5.6px, 65.33% 5.8px, 66.67% 7.0px, 68.00% 7.0px, 69.33% 7.8px, 70.67% 7.2px, 72.00% 6.3px, 73.33% 5.9px, 74.67% 5.4px, 76.00% 5.1px, 77.33% 3.5px, 78.67% 4.3px, 80.00% 4.4px, 81.33% 4.9px, 82.67% 3.5px, 84.00% 4.5px, 85.33% 4.9px, 86.67% 4.2px, 88.00% 4.3px, 89.33% 2.8px, 90.67% 3.0px, 92.00% 1.8px, 93.33% 1.2px, 94.67% 2.7px, 96.00% 0.9px, 97.33% 2.5px, 98.67% 1.5px, 100.00% 2.5px, 100% 100%, 0% 100%); }
 .rasgo-2 { clip-path: polygon(0.00% 6.8px, 1.33% 5.7px, 2.67% 5.5px, 4.00% 5.4px, 5.33% 7.1px, 6.67% 6.8px, 8.00% 8.5px, 9.33% 8.9px, 10.67% 8.1px, 12.00% 9.4px, 13.33% 7.5px, 14.67% 8.8px, 16.00% 8.3px, 17.33% 7.5px, 18.67% 7.0px, 20.00% 7.8px, 21.33% 7.9px, 22.67% 7.8px, 24.00% 7.1px, 25.33% 6.9px, 26.67% 7.1px, 28.00% 8.0px, 29.33% 7.2px, 30.67% 6.4px, 32.00% 6.5px, 33.33% 4.7px, 34.67% 3.9px, 36.00% 4.8px, 37.33% 3.3px, 38.67% 3.5px, 40.00% 2.1px, 41.33% 2.3px, 42.67% 2.2px, 44.00% 3.7px, 45.33% 3.4px, 46.67% 4.0px, 48.00% 2.6px, 49.33% 3.0px, 50.67% 2.8px, 52.00% 2.2px, 53.33% 3.2px, 54.67% 1.3px, 56.00% 1.6px, 57.33% 3.3px, 58.67% 2.5px, 60.00% 5.1px, 61.33% 5.9px, 62.67% 4.8px, 64.00% 6.8px, 65.33% 6.5px, 66.67% 6.5px, 68.00% 7.3px, 69.33% 8.2px, 70.67% 7.3px, 72.00% 8.0px, 73.33% 6.7px, 74.67% 7.4px, 76.00% 7.9px, 77.33% 8.2px, 78.67% 7.1px, 80.00% 7.5px, 81.33% 9.5px, 82.67% 8.5px, 84.00% 9.5px, 85.33% 7.7px, 86.67% 7.2px, 88.00% 8.1px, 89.33% 6.9px, 90.67% 6.0px, 92.00% 6.0px, 93.33% 6.1px, 94.67% 5.5px, 96.00% 7.3px, 97.33% 6.5px, 98.67% 6.3px, 100.00% 7.1px, 100% 100%, 0% 100%); }
 .rasgo-3 { clip-path: polygon(0.00% 4.3px, 1.33% 3.3px, 2.67% 4.1px, 4.00% 4.7px, 5.33% 4.8px, 6.67% 6.0px, 8.00% 5.3px, 9.33% 5.7px, 10.67% 6.2px, 12.00% 5.6px, 13.33% 5.2px, 14.67% 4.3px, 16.00% 5.7px, 17.33% 5.7px, 18.67% 4.2px, 20.00% 5.2px, 21.33% 5.6px, 22.67% 5.7px, 24.00% 6.4px, 25.33% 5.8px, 26.67% 5.0px, 28.00% 5.9px, 29.33% 5.0px, 30.67% 3.6px, 32.00% 4.5px, 33.33% 2.0px, 34.67% 2.7px, 36.00% 2.1px, 37.33% 2.3px, 38.67% 0.6px, 40.00% 0.8px, 41.33% 1.4px, 42.67% 1.9px, 44.00% 3.2px, 45.33% 2.9px, 46.67% 5.4px, 48.00% 5.4px, 49.33% 6.0px, 50.67% 4.9px, 52.00% 5.3px, 53.33% 5.7px, 54.67% 6.1px, 56.00% 5.9px, 57.33% 5.0px, 58.67% 5.7px, 60.00% 6.4px, 61.33% 6.8px, 62.67% 6.6px, 64.00% 6.5px, 65.33% 7.8px, 66.67% 8.0px, 68.00% 7.6px, 69.33% 5.7px, 70.67% 5.5px, 72.00% 4.7px, 73.33% 4.0px, 74.67% 4.8px, 76.00% 4.7px, 77.33% 5.7px, 78.67% 5.6px, 80.00% 5.4px, 81.33% 6.2px, 82.67% 8.0px, 84.00% 8.6px, 85.33% 8.7px, 86.67% 9.0px, 88.00% 8.9px, 89.33% 9.6px, 90.67% 8.7px, 92.00% 8.7px, 93.33% 8.5px, 94.67% 8.0px, 96.00% 8.2px, 97.33% 9.4px, 98.67% 9.3px, 100.00% 9.5px, 100% 100%, 0% 100%); }
@@ -119,11 +118,10 @@ a:hover { opacity: 0.85; }
   overflow: hidden;
 }
 
-/* Ilustração Fundo.png tratada para contrastar com areia clara */
 .topo-bg-ilustracao {
   position: absolute;
   inset: 0;
-  background-image: var(--bg-hero, url('Fundo.png'), url('fundo.jpg'), url('fundo.png'));
+  background-image: url('Fundo.png'), url('fundo.jpg'), url('fundo.png');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -132,7 +130,6 @@ a:hover { opacity: 0.85; }
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 0;
-  transition: opacity 0.4s ease;
 }
 
 .topo .coluna {
@@ -164,26 +161,6 @@ a:hover { opacity: 0.85; }
   display: block;
 }
 .hero-logo-img:hover { transform: scale(1.015); }
-
-/* Logo reserva */
-.hero-logo-fallback {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 16px;
-  border: 2px dashed rgba(162, 71, 17, 0.5);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  max-width: 440px;
-}
-.hero-logo-fallback.ativo { display: flex; }
-.hero-logo-fallback h1 {
-  font-size: clamp(3.2rem, 9vw, 5rem);
-  color: var(--barro);
-  line-height: 0.95;
-  letter-spacing: -0.01em;
-}
 
 .menu {
   display: flex;
@@ -302,7 +279,7 @@ a:hover { opacity: 0.85; }
 .presentes-bg-renda {
   position: absolute;
   inset: 0;
-  background-image: var(--bg-renda, url('Fundo renda.png'), url('fundo renda.jpg'), url('fundo renda.png'));
+  background-image: url('Fundo renda.png'), url('fundo renda.jpg'), url('fundo renda.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -429,7 +406,6 @@ a:hover { opacity: 0.85; }
   object-fit: contain;
   margin-inline: auto;
   display: block;
-  /* Harmonização para brilhar suavemente em tom areia/ocre sobre o fundo verde mata */
   filter: brightness(0) invert(92%) sepia(18%) saturate(450%) hue-rotate(345deg) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
   transition: transform 0.25s ease;
 }
@@ -453,8 +429,7 @@ a:hover { opacity: 0.85; }
 <body>
 
 <header class="faixa topo" id="topo">
-  <!-- Imagem de fundo Fundo.png com efeito de mesclagem suave -->
-  <div class="topo-bg-ilustracao" id="bg-hero" aria-hidden="true"></div>
+  <div class="topo-bg-ilustracao" aria-hidden="true"></div>
 
   <div class="coluna">
     <nav class="menu" aria-label="Seções da página">
@@ -464,19 +439,13 @@ a:hover { opacity: 0.85; }
       <a href="#historia">Nossa história</a>
     </nav>
 
-    <!-- LOGO OFICIAL NO HERO: logo.png (com fallback e uploader integrado) -->
     <div class="hero-logo-wrapper">
       <img
         src="logo.png"
         alt="Helena &amp; Eduardo"
         class="hero-logo-img"
-        id="img-logo"
         loading="eager"
       >
-      <div class="hero-logo-fallback" id="logo-fallback">
-        <h1>Helena &amp; Eduardo</h1>
-        <p style="font-size: 0.95rem; color: var(--barro);">Clique no painel de imagens no canto para carregar sua logo.png</p>
-      </div>
     </div>
 
     <dl class="dados">
@@ -520,7 +489,6 @@ a:hover { opacity: 0.85; }
           src="Ilustração_Sem_Título 3.png"
           alt=""
           class="ornamento-pessoas-queridas"
-          id="img-ornamento"
         >
       </div>
       <div class="texto">
@@ -530,7 +498,6 @@ a:hover { opacity: 0.85; }
     </div>
   </section>
 
-  <!-- Informações práticas (Vestimenta, Transporte, Crianças) -->
   <div class="faixa papel rasgo-2 faixa--mata" id="informacoes">
     <div class="coluna trio">
       <section aria-labelledby="t-vestimentas">
@@ -549,7 +516,7 @@ a:hover { opacity: 0.85; }
   </div>
 
   <section class="faixa papel rasgo-3 faixa--presentes-renda" id="presentes" aria-labelledby="t-presentes">
-    <div class="presentes-bg-renda" id="bg-renda" aria-hidden="true"></div>
+    <div class="presentes-bg-renda" aria-hidden="true"></div>
     <div class="coluna dupla">
       <h2 id="t-presentes">Presentes</h2>
       <div class="texto">
@@ -575,7 +542,7 @@ a:hover { opacity: 0.85; }
     </div>
   </section>
 
-  <!-- Formulário de confirmação de presença (RSVP) -->
+  <!-- Confirmação de Presença (RSVP) -->
   <section class="faixa papel rasgo-4 faixa--barro" id="presenca" aria-labelledby="t-presenca">
     <div class="coluna dupla">
       <h2 id="t-presenca">Confirme sua presença</h2>
@@ -606,7 +573,6 @@ a:hover { opacity: 0.85; }
     </div>
   </section>
 
-  <!-- Seção da história dos noivos -->
   <section class="faixa papel rasgo-5 faixa--palha" id="historia" aria-labelledby="t-historia">
     <div class="coluna dupla">
       <h2 id="t-historia">Nossa história</h2>
@@ -634,19 +600,14 @@ a:hover { opacity: 0.85; }
 
 <script>
 (function () {
-  var imgLogo = document.getElementById("img-logo");
-  var logoFallback = document.getElementById("logo-fallback");
+  /*
+   * COLE AQUI A URL DO SEU APPS SCRIPT (TERMINADA EM /exec)
+   */
+  var RSVP_URL = "https://script.google.com/macros/s/AKfycbzIiUibmCNaC4GNdpJT415sG6oKMXOiIBV53EwvOnamxM8SASDkWeDhj9j252LUD8H9/exec";
 
-  // Tratamento de erro na logo do hero (se falhar, mostra fallback em texto)
-  if (imgLogo) {
-    imgLogo.addEventListener("error", function () {
-      imgLogo.style.display = "none";
-      if (logoFallback) logoFallback.classList.add("ativo");
-    });
-    imgLogo.addEventListener("load", function () {
-      imgLogo.style.display = "block";
-      if (logoFallback) logoFallback.classList.remove("ativo");
-    });
+  // Suporte retrocompatível se alguém usar RSVP.url
+  if (typeof RSVP !== "undefined" && RSVP.url) {
+    RSVP_URL = RSVP.url;
   }
 
   // Copiar chaves Pix
@@ -686,14 +647,7 @@ a:hover { opacity: 0.85; }
     try { document.execCommand("copy"); cb(); } catch(e) {}
   }
 
-  /* 
-   * VINCULAÇÃO COM O GOOGLE SHEETS
-   * Cole abaixo a URL gerada no Google Apps Script (terminada em /exec).
-   * Veja o arquivo "como-vincular-google-planilha.md" para o passo a passo.
-   */
-  var RSVP_URL = "https://script.google.com/macros/s/AKfycbzIiUibmCNaC4GNdpJT415sG6oKMXOiIBV53EwvOnamxM8SASDkWeDhj9j252LUD8H9/exec";
-
-  // Contador de presença
+  // Contador de pessoas
   var form = document.getElementById("form-presenca");
   var inputNome = document.getElementById("nome");
   var inputQtd = document.getElementById("quantidade");
@@ -728,28 +682,27 @@ a:hover { opacity: 0.85; }
         return;
       }
 
-      // Se a URL ainda não foi preenchida, faz uma demonstração de aviso
       if (!RSVP_URL) {
-        aviso.textContent = "Aviso: A planilha do Google ainda não foi configurada no código.";
+        aviso.textContent = "Aviso: A URL da planilha ainda não foi colada no código (linha ~370).";
         document.getElementById("obrigado-texto").textContent =
-          nome + " — " + qtd + (qtd === 1 ? " pessoa confirmada (modo de teste)." : " pessoas confirmadas (modo de teste).");
+          nome + " — " + qtd + (qtd === 1 ? " pessoa (modo de teste)." : " pessoas (modo de teste).");
         form.hidden = true;
         blocoObrigado.hidden = false;
         return;
       }
 
-      // Envio real para o Google Sheets
       btnEnviar.disabled = true;
-      aviso.textContent = "Confirmando presença, aguarde um instante...";
+      aviso.textContent = "Gravando sua presença na planilha...";
 
-      var formData = new FormData();
-      formData.append("nome", nome);
-      formData.append("quantidade", qtd);
+      // Envio via FormData e fetch em modo no-cors
+      var dados = new FormData();
+      dados.append("nome", nome);
+      dados.append("quantidade", qtd);
 
       fetch(RSVP_URL, {
         method: "POST",
         mode: "no-cors",
-        body: formData
+        body: dados
       })
       .then(function () {
         document.getElementById("obrigado-texto").textContent =
@@ -760,7 +713,7 @@ a:hover { opacity: 0.85; }
       })
       .catch(function () {
         btnEnviar.disabled = false;
-        aviso.textContent = "Não foi possível enviar sua confirmação. Por favor, tente novamente.";
+        aviso.textContent = "Houve um problema de conexão. Por favor, tente novamente.";
       });
     });
   }
