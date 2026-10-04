@@ -421,64 +421,20 @@ a:hover { opacity: 0.85; }
   border-radius: 8px;
   border: 1px dashed var(--linha);
 }
-.rodape { text-align: center; padding-bottom: clamp(20px, 3.5vw, 36px); }
-.rodape .assinatura-texto {
-  font-family: var(--font-destaque);
-  font-size: clamp(3rem, 6.8vw, 4.6rem);
-  line-height: 0.95;
-  color: var(--ocre);
-  letter-spacing: -0.01em;
-  margin: 0;
-  padding: 0;
-}
-
-.painel-midia {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  background: #FFF;
-  color: var(--barro);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  padding: 16px;
-  max-width: 320px;
-  font-size: 0.85rem;
-  border: 2px solid var(--terracota);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.painel-midia.minimizado {
-  transform: translateY(calc(100% - 46px));
-}
-.painel-midia-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.painel-midia-btn {
-  background: var(--terracota);
-  color: #FFF;
-  border: 0;
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-weight: 700;
-  font-size: 0.82rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.rodape { text-align: center; padding-bottom: clamp(28px, 4.5vw, 48px); }
+.rodape-logo-img {
   width: 100%;
-  justify-content: center;
+  max-width: clamp(140px, 32vw, 210px);
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+  display: block;
+  /* Harmonização para brilhar suavemente em tom areia/ocre sobre o fundo verde mata */
+  filter: brightness(0) invert(92%) sepia(18%) saturate(450%) hue-rotate(345deg) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  transition: transform 0.25s ease;
 }
-.painel-midia-btn:hover { background: var(--barro); }
-.painel-midia-status {
-  margin-top: 8px;
-  font-size: 0.78rem;
-  color: #555;
-  line-height: 1.35;
+.rodape-logo-img:hover {
+  transform: scale(1.025);
 }
 
 @media (max-width: 768px) {
@@ -664,145 +620,36 @@ a:hover { opacity: 0.85; }
 
 <footer class="faixa papel rasgo-6 faixa--mata rodape">
   <div class="coluna">
-    <p class="assinatura-texto">Helena &amp; Eduardo</p>
-    <p style="margin-top: 4px; opacity: 0.9; font-size: 1rem; font-family: var(--font-corpo);">9 de janeiro de 2027 &bull; Jaboatão dos Guararapes - PE</p>
+    <img
+      src="logo.png"
+      alt="Helena &amp; Eduardo"
+      class="rodape-logo-img"
+      loading="lazy"
+    >
+    <p style="margin-top: 14px; opacity: 0.9; font-size: 0.95rem; font-family: var(--font-corpo); letter-spacing: 0.02em;">
+      9 de janeiro de 2027 &bull; Jaboatão dos Guararapes - PE
+    </p>
   </div>
 </footer>
-
-<div class="painel-midia" id="painel-midia">
-  <div class="painel-midia-header" id="painel-toggle" title="Minimizar ou expandir">
-    <span>🖼️ Imagens do Convite</span>
-    <span id="painel-seta">▾</span>
-  </div>
-  <p style="margin-bottom: 8px; color:#666;">Na prévia, selecione suas imagens para vê-las agora:</p>
-  <label class="painel-midia-btn">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-    <span>Carregar imagem(ns)...</span>
-    <input type="file" id="input-geral-imagens" multiple accept="image/*" style="display:none">
-  </label>
-  <div class="painel-midia-status" id="painel-status">
-    Dica: Você pode selecionar <code>logo.png</code>, <code>Fundo.png</code>, <code>Fundo renda.png</code> de uma vez só!
-  </div>
-</div>
 
 <script>
 (function () {
   var imgLogo = document.getElementById("img-logo");
   var logoFallback = document.getElementById("logo-fallback");
-  var bgHero = document.getElementById("bg-hero");
-  var bgRenda = document.getElementById("bg-renda");
-  var imgOrnamento = document.getElementById("img-ornamento");
-  var inputImagens = document.getElementById("input-geral-imagens");
-  var painelStatus = document.getElementById("painel-status");
-  var painel = document.getElementById("painel-midia");
-  var painelToggle = document.getElementById("painel-toggle");
-  var painelSeta = document.getElementById("painel-seta");
 
-  // Alternar painel
-  painelToggle.addEventListener("click", function() {
-    painel.classList.toggle("minimizado");
-    painelSeta.textContent = painel.classList.contains("minimizado") ? "▴" : "▾";
-  });
-
-  // Tratamento de erro na logo (se falhar relative path, mostra fallback limpo)
-  imgLogo.addEventListener("error", function () {
-    if (!imgLogo.dataset.blobCarregado) {
+  // Tratamento de erro na logo do hero (se falhar, mostra fallback em texto)
+  if (imgLogo) {
+    imgLogo.addEventListener("error", function () {
       imgLogo.style.display = "none";
-      logoFallback.classList.add("ativo");
-    }
-  });
-  imgLogo.addEventListener("load", function () {
-    imgLogo.style.display = "block";
-    logoFallback.classList.remove("ativo");
-  });
-
-  // Carregar imagens do cache da sessão se já tiverem sido escolhidas
-  function restaurarCache() {
-    try {
-      var sLogo = sessionStorage.getItem("img_logo");
-      if (sLogo) aplicarImagem("logo", sLogo);
-
-      var sFundo = sessionStorage.getItem("img_fundo");
-      if (sFundo) aplicarImagem("fundo", sFundo);
-
-      var sRenda = sessionStorage.getItem("img_renda");
-      if (sRenda) aplicarImagem("renda", sRenda);
-
-      var sOrnamento = sessionStorage.getItem("img_ornamento");
-      if (sOrnamento) aplicarImagem("ornamento", sOrnamento);
-    } catch(e) {}
-  }
-
-  function aplicarImagem(tipo, url) {
-    if (tipo === "logo") {
-      imgLogo.dataset.blobCarregado = "true";
-      imgLogo.src = url;
-      imgLogo.style.display = "block";
-      logoFallback.classList.remove("ativo");
-    } else if (tipo === "fundo") {
-      bgHero.style.backgroundImage = 'url("' + url + '")';
-      bgHero.style.opacity = "0.35";
-    } else if (tipo === "renda") {
-      bgRenda.style.backgroundImage = 'url("' + url + '")';
-      bgRenda.style.opacity = "0.45";
-    } else if (tipo === "ornamento") {
-      imgOrnamento.src = url;
-      imgOrnamento.style.display = "block";
-    }
-  }
-
-  // Identificação e atribuição automática dos arquivos selecionados
-  inputImagens.addEventListener("change", function (e) {
-    var files = Array.from(e.target.files || []);
-    if (!files.length) return;
-
-    var carregados = [];
-    files.forEach(function (file) {
-      var nome = file.name.toLowerCase();
-      var objUrl = URL.createObjectURL(file);
-
-      if (nome.includes("renda")) {
-        aplicarImagem("renda", objUrl);
-        carregados.push("Fundo renda");
-      } else if (nome.includes("logo")) {
-        aplicarImagem("logo", objUrl);
-        carregados.push("Logo");
-      } else if (nome.includes("fundo") || nome.includes("sitio") || nome.includes("casa")) {
-        aplicarImagem("fundo", objUrl);
-        carregados.push("Fundo Hero");
-      } else if (nome.includes("ilustra") || nome.includes("ornamento") || nome.includes("3")) {
-        aplicarImagem("ornamento", objUrl);
-        carregados.push("Ornamento");
-      } else {
-        if (files.length === 1) {
-          aplicarImagem("logo", objUrl);
-          carregados.push("Logo");
-        }
-      }
-
-      if (file.size < 2500000) {
-        var reader = new FileReader();
-        reader.onload = function(evt) {
-          var dataUrl = evt.target.result;
-          try {
-            if (nome.includes("renda")) sessionStorage.setItem("img_renda", dataUrl);
-            else if (nome.includes("logo")) sessionStorage.setItem("img_logo", dataUrl);
-            else if (nome.includes("fundo")) sessionStorage.setItem("img_fundo", dataUrl);
-            else if (nome.includes("ilustra") || nome.includes("3")) sessionStorage.setItem("img_ornamento", dataUrl);
-          } catch(err) {}
-        };
-        reader.readAsDataURL(file);
-      }
+      if (logoFallback) logoFallback.classList.add("ativo");
     });
+    imgLogo.addEventListener("load", function () {
+      imgLogo.style.display = "block";
+      if (logoFallback) logoFallback.classList.remove("ativo");
+    });
+  }
 
-    if (carregados.length) {
-      painelStatus.innerHTML = "✅ <strong>" + carregados.join(", ") + "</strong> carregado(s) com sucesso na prévia!";
-      painelStatus.style.color = "#1e7e34";
-    }
-  });
-
-  restaurarCache();
-
+  // Copiar chaves Pix
   document.querySelectorAll("[data-copiar]").forEach(function (botao) {
     botao.addEventListener("click", function () {
       var idAlvo = botao.dataset.copiar;
@@ -844,7 +691,6 @@ a:hover { opacity: 0.85; }
   var inputNome = document.getElementById("nome");
   var inputQtd = document.getElementById("quantidade");
   var aviso = document.getElementById("aviso");
-  var btnEnviar = document.getElementById("enviar");
   var blocoObrigado = document.getElementById("obrigado");
 
   function ajustar(d) {
@@ -852,30 +698,34 @@ a:hover { opacity: 0.85; }
     if (isNaN(val)) val = 1;
     inputQtd.value = Math.min(20, Math.max(1, val + d));
   }
-  document.getElementById("menos").addEventListener("click", function () { ajustar(-1); });
-  document.getElementById("mais").addEventListener("click", function () { ajustar(1); });
+  var btnMenos = document.getElementById("menos");
+  var btnMais = document.getElementById("mais");
+  if (btnMenos) btnMenos.addEventListener("click", function () { ajustar(-1); });
+  if (btnMais) btnMais.addEventListener("click", function () { ajustar(1); });
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var nome = inputNome.value.trim();
-    var qtd = parseInt(inputQtd.value, 10);
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nome = inputNome.value.trim();
+      var qtd = parseInt(inputQtd.value, 10);
 
-    if (!nome) {
-      aviso.textContent = "Por favor, digite seu nome.";
-      inputNome.focus();
-      return;
-    }
-    if (isNaN(qtd) || qtd < 1 || qtd > 20) {
-      aviso.textContent = "Informe a quantidade de pessoas (entre 1 e 20).";
-      inputQtd.focus();
-      return;
-    }
+      if (!nome) {
+        aviso.textContent = "Por favor, digite seu nome.";
+        inputNome.focus();
+        return;
+      }
+      if (isNaN(qtd) || qtd < 1 || qtd > 20) {
+        aviso.textContent = "Informe a quantidade de pessoas (entre 1 e 20).";
+        inputQtd.focus();
+        return;
+      }
 
-    document.getElementById("obrigado-texto").textContent =
-      nome + " — " + qtd + (qtd === 1 ? " pessoa confirmada." : " pessoas confirmadas.") + " Esperamos você no dia 9 de janeiro de 2027!";
-    form.hidden = true;
-    blocoObrigado.hidden = false;
-  });
+      document.getElementById("obrigado-texto").textContent =
+        nome + " — " + qtd + (qtd === 1 ? " pessoa confirmada." : " pessoas confirmadas.") + " Esperamos você no dia 9 de janeiro de 2027!";
+      form.hidden = true;
+      blocoObrigado.hidden = false;
+    });
+  }
 })();
 </script>
 </body>
